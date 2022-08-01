@@ -5,6 +5,12 @@
 *.so
 *.dylib
 
+srv_go
+bld.bash
+tst.bash
+upl.bash
+deploy.bash
+c.out
 # Test binary, built with `go test -c`
 *.test
 
@@ -12,4 +18,15 @@
 *.out
 
 # Dependency directories (remove the comment below to include it)
-# vendor/
+
+.vscode/
+.vscode
+
+.DS_Store
+
+bin/
+server/
+client/
+grpc.adoc
+grpc01.adoc
+
