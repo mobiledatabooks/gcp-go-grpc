@@ -35,23 +35,22 @@ func main() {
 	flag.Parse()
 	options := []grpc.DialOption{
 		grpc.WithTransportCredentials(insecure.NewCredentials()),
-		grpc.WithBlock(),
+		grpc.WithBlock(), // block until connection is established
 	}
 	// Set up a connection to the server.
 	conn, err := grpc.Dial(*addr, options...)
-
-	if err != nil {
+	if err != nil { // if err != nil {
 		log.Fatalf("did not connect: %v", err)
 	}
 	defer conn.Close()
-	greeterClient := pb.NewGreeterClient(conn)
+	greeterClient := pb.NewGreeterClient(conn) // Create a client
 
 	counter := 0
-	for {
+	for { // loop forever
 		start := time.Now()
-		callSayHello(greeterClient)
-		time.Sleep(1 * time.Second)
-		fmt.Println("It took ", time.Since(start), " counter:", counter)
+		callSayHello(greeterClient)                                      // call the function
+		time.Sleep(1 * time.Second)                                      // sleep for 1 second
+		fmt.Println("It took ", time.Since(start), " counter:", counter) // print the time it took
 		counter++
 	}
 
