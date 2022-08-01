@@ -25,6 +25,8 @@ c.out
 .DS_Store
 
 bin/
+client
+server
 # server/
 # client/
 grpc.adoc
