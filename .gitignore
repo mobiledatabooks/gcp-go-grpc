@@ -26,8 +26,8 @@ c.out
 
 bin/
 main
-# server/
-# client/
+server/main
+client/main
 grpc.adoc
 grpc01.adoc
 
